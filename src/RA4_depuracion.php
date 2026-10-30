@@ -12,12 +12,12 @@ function contarPorCiclo(array $curriculos): array
     $cuenta = [];
     foreach ($curriculos as $curriculo) {
         $codigo = $curriculo->ciclo->codCiclo;
-        $cuenta[$codigo] = isset($cuenta[$codigo]) ? $cuenta[$codigo]++ : 1;
+        $cuenta[$codigo] = isset($cuenta[$codigo]) ? ++$cuenta[$codigo] : 1;
     }
     return $cuenta;
 }
 /** Porcentaje (redondeado a entero) que representa $parte sobre $total. */
 function porcentaje(int $parte, int $total): int
 {
-    return intdiv($parte, $total) * 100;
+    return intdiv(100 * $parte, $total) ;
 }
